@@ -74,6 +74,7 @@
     <Content Include="images\Descr.WD3" />
     <Content Include="Master\MainFrame.Master" />
     <Content Include="ashx\ValidateCode.ashx" />
+    <Content Include="ashx\CheckVCode.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,6 +187,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ashx\CheckVCode.ashx.cs">
+      <DependentUpon>CheckVCode.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ashx\ValidateCode.ashx.cs">
       <DependentUpon>ValidateCode.ashx</DependentUpon>
     </Compile>
@@ -195,6 +199,9 @@
     </Compile>
     <Compile Include="Master\MainFrame.Master.designer.cs">
       <DependentUpon>MainFrame.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Member\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Member\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
