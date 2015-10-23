@@ -57,6 +57,23 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\Bitter-Bold.eot" />
+    <Content Include="fonts\Bitter-Bold.ttf" />
+    <Content Include="fonts\Bitter-Italic.eot" />
+    <Content Include="fonts\Bitter-Italic.ttf" />
+    <Content Include="fonts\Bitter.eot" />
+    <Content Include="fonts\Bitter.ttf" />
+    <Content Include="fonts\Descr.WD3" />
+    <Content Include="fonts\Segoeui-Bold.eot" />
+    <Content Include="fonts\Segoeui-Bold.ttf" />
+    <Content Include="fonts\Segoeui-Italic.eot" />
+    <Content Include="fonts\Segoeui-Italic.ttf" />
+    <Content Include="fonts\Segoeui.eot" />
+    <Content Include="fonts\Segoeui.ttf" />
+    <Content Include="images\content\Descr.WD3" />
+    <Content Include="images\Descr.WD3" />
+    <Content Include="Master\MainFrame.Master" />
+    <Content Include="ashx\ValidateCode.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -65,11 +82,137 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
+    <Content Include="blog.html" />
+    <Content Include="blog_post.html" />
+    <Content Include="catalog_grid.html" />
+    <Content Include="catalog_list.html" />
+    <Content Include="checkout.html" />
+    <Content Include="compare.html" />
+    <Content Include="contact_us.html" />
+    <Content Include="css\grid.css" />
+    <Content Include="css\jquery.jqzoom.css" />
+    <Content Include="css\MyStyle.css" />
+    <Content Include="css\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="images\avatar.png" />
+    <Content Include="images\banner.png" />
+    <Content Include="images\banner1.png" />
+    <Content Include="images\banner2.png" />
+    <Content Include="images\banner3.png" />
+    <Content Include="images\best_price.png" />
+    <Content Include="images\bg_arows.png" />
+    <Content Include="images\bg_banner.png" />
+    <Content Include="images\bg_bay.png" />
+    <Content Include="images\bg_blockquote.png" />
+    <Content Include="images\bg_cart_nav.png" />
+    <Content Include="images\bg_cart_nav_h.png" />
+    <Content Include="images\bg_chackout.png" />
+    <Content Include="images\bg_footer.png" />
+    <Content Include="images\bg_header.png" />
+    <Content Include="images\bg_like.png" />
+    <Content Include="images\bg_newsletter.png" />
+    <Content Include="images\bg_obn.png" />
+    <Content Include="images\bg_phone_top.png" />
+    <Content Include="images\bg_search.png" />
+    <Content Include="images\bg_search_h.png" />
+    <Content Include="images\bg_soc.png" />
+    <Content Include="images\button_cart.png" />
+    <Content Include="images\cart_img.png" />
+    <Content Include="images\check-bg.png" />
+    <Content Include="images\close.png" />
+    <Content Include="images\content\slide1.jpg" />
+    <Content Include="images\content\slide2.jpg" />
+    <Content Include="images\content\slide3.jpg" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\favicon.html" />
+    <Content Include="images\gal.png" />
+    <Content Include="images\grid_list.png" />
+    <Content Include="images\img_left.png" />
+    <Content Include="images\img_right.png" />
+    <Content Include="images\let_d.png" />
+    <Content Include="images\li_adr.png" />
+    <Content Include="images\li_let.png" />
+    <Content Include="images\li_phone.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\new.png" />
+    <Content Include="images\new_smells.png" />
+    <Content Include="images\n_com.png" />
+    <Content Include="images\only_natural.png" />
+    <Content Include="images\product_1.png" />
+    <Content Include="images\product_10.png" />
+    <Content Include="images\product_2.png" />
+    <Content Include="images\product_3.png" />
+    <Content Include="images\product_4.png" />
+    <Content Include="images\product_5.png" />
+    <Content Include="images\product_6.png" />
+    <Content Include="images\product_7.png" />
+    <Content Include="images\product_8.png" />
+    <Content Include="images\product_9.png" />
+    <Content Include="images\produkt_slid.png" />
+    <Content Include="images\produkt_slid1.png" />
+    <Content Include="images\produkt_slid2.png" />
+    <Content Include="images\produkt_slid3.png" />
+    <Content Include="images\produkt_slid4.png" />
+    <Content Include="images\radio-bg.png" />
+    <Content Include="images\review.png" />
+    <Content Include="images\sale.png" />
+    <Content Include="images\select-button.png" />
+    <Content Include="images\soc.png" />
+    <Content Include="images\special1.png" />
+    <Content Include="images\special2.png" />
+    <Content Include="images\top.png" />
+    <Content Include="images\what.png" />
+    <Content Include="index-2.html" />
+    <Content Include="js\checkbox.js" />
+    <Content Include="js\html5.js" />
+    <Content Include="js\jflow.plus.js" />
+    <Content Include="js\jquery-1.7.2.min.js" />
+    <Content Include="js\jquery.carouFredSel-5.2.2-packed.js" />
+    <Content Include="js\jquery.jqzoom-core.js" />
+    <Content Include="js\radio.js" />
+    <Content Include="js\selectBox.js" />
+    <Content Include="login.html" />
+    <Content Include="Member\HtmlPage1.html" />
+    <Content Include="Member\Index.aspx" />
+    <Content Include="Member\index.html" />
+    <Content Include="Member\Register.aspx" />
+    <Content Include="product_page.html" />
+    <Content Include="shopping_cart.html" />
+    <Content Include="site.txt" />
+    <Content Include="text_page.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ashx\ValidateCode.ashx.cs">
+      <DependentUpon>ValidateCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Master\MainFrame.Master.cs">
+      <DependentUpon>MainFrame.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\MainFrame.Master.designer.cs">
+      <DependentUpon>MainFrame.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
