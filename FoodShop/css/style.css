@@ -211,7 +211,8 @@ input[type="submit"]:focus{
 }
 /*** Input **/
 input[type="email"],
-input[type="text"]{
+input[type="text"],
+input[type="password"]{
 	height: 33px;
 	padding: 0 10px;
 	border: 1px solid #ccc;
@@ -1872,7 +1873,8 @@ form.registed strong{
 	font: bold 13px/13px Segoeui-Bold, Myriad Pro, Verdana, serif;
 }
 form.registed input[type="text"],
-form.registed input[type="email"]{
+form.registed input[type="email"],
+form.registed input[type="password"]{
 	width: 255px;
 	margin: 5px 0 13px 0;
 }
