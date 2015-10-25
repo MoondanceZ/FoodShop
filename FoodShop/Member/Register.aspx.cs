@@ -22,12 +22,11 @@ namespace FoodShop.Member
                 user.Telephone = Request.Form["txtTel"].ToString();
                 user.Email = Request.Form["txtEmail"].ToString();
                 user.RegTime = DateTime.Now;
-                MODEL.UType uType = new MODEL.UType(1);                
+                MODEL.UType uType = new MODEL.UType(1);
                 user.UType = uType;
                 login = BLL.UserManager.AddUser(user);
                 if (login)
                 {
-                    //Thread.Sleep(5000);
                     Response.Redirect("Index.aspx");
                 }
             }
