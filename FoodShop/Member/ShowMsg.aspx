@@ -29,7 +29,7 @@
     <div class="container_12">
 
         <h4>尊敬的<span style="font-size: 25px; font-style: italic"><%= this.userName %></span>用户,恭喜您注册成功,您将在
-            <span id="time" style="font-size: 20px; color: red">5</span>秒后跳转到<a href="Index.aspx">首页!</a></h4>
+            <span id="time" style="font-size: 20px; color: red">5</span>秒后跳转到<a style="text-decoration:none" href="<%= this.url%>"><%= this.urlName %></a></h4>
 
     </div>
 </asp:Content>

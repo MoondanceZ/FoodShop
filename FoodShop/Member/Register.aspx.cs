@@ -10,9 +10,10 @@ namespace FoodShop.Member
 {
     public partial class Register : System.Web.UI.Page
     {
-        public bool login;
         protected void Page_Load(object sender, EventArgs e)
         {
+            string url = Request.QueryString["url"];
+            string urlName = Request.QueryString["urlName"];
             if (IsPostBack)
             {
                 MODEL.User user = new MODEL.User();
@@ -24,10 +25,16 @@ namespace FoodShop.Member
                 user.RegTime = DateTime.Now;
                 MODEL.UType uType = new MODEL.UType(1);
                 user.UType = uType;
-                login = BLL.UserManager.AddUser(user);
-                if (login)
+                if (BLL.UserManager.AddUser(user))
                 {
-                    Response.Redirect("Index.aspx");
+                    if (!String.IsNullOrEmpty(url))
+                    {
+                        Response.Redirect("Index.aspx?uid=" + Server.UrlEncode(user.LoginId));
+                    }
+                    else
+                    {
+                        Response.Redirect("Index.aspx?url=" + Server.UrlEncode(url) + "&urlName=" + Server.UrlEncode(urlName) + "&uid=" + Server.UrlEncode(user.LoginId));
+                    }
                 }
             }
         }
