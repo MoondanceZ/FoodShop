@@ -19,20 +19,5 @@
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="ts" style="width:800px; height:600px;background-color:blue">
-        <h1>111111111111111111111111111111</h1>
-    </div>
-    <%--<div class="reg">
-        <button id="notification-trigger" class="progress-button">
-        </button>
-        
-    </div>--%>
-    <input type="button" value="tijiao111" id="bt1" runat="server" onclick="bt1Click()" />
-    <script type="text/javascript">
-        function bt1Click() {
-            $("body").css("background-color","red")
-            //alert('123213123');
-        }
-    </script>
-    
+   
 </asp:Content>

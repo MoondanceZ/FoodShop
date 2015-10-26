@@ -35,7 +35,7 @@ namespace BLL
                     msg="此用户已被禁用!";
                     return false;
                 }
-                else if(user.UType.Id==1)
+                else if(user.UType.Id==0)
                 {
                     msg = "此用户已注销!";
                     return false;

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FoodShop.Member
 {
-    public partial class Test : System.Web.UI.Page
+    public partial class Test : Common.BaseCheckSession
     {
         protected void Page_Load(object sender, EventArgs e)
         {

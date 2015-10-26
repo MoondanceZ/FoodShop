@@ -13,15 +13,29 @@ namespace FoodShop.Member
         string url;
         string userName;
         public string msg = string.Empty;
+        public string returnUrl = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
             url = Request.QueryString["url"] ?? "Index.aspx";
             urlName = Request.QueryString["urlName"] ?? "首页";
             userName = Request.QueryString["userName"];
-            if (IsPostBack)
+            if (!string.IsNullOrEmpty(Request.Form["isPostBack"]))
             {
                 CheckUserInfo();
             }
+            //else//get请求时执行
+            //{
+            //    if (!string.IsNullOrEmpty(Request.QueryString["returnUrl"]))
+            //    {
+            //        returnUrl = Request.QueryString["returnUrl"];
+            //    }
+            //    //CheckUserCookie();
+            //}
+        }
+
+        private void CheckUserCookie()
+        {
+            throw new NotImplementedException();
         }
 
         private void CheckUserInfo()
@@ -38,10 +52,12 @@ namespace FoodShop.Member
                 //判断有无回传地址
                 if (!String.IsNullOrEmpty(Request.QueryString["returnUrl"]))
                 {
-                    Response.Redirect(Request.QueryString["returnUel"]);
+                    Response.Redirect(Request.QueryString["returnUrl"]);
                 }
                 Response.Redirect("ShowMsg.aspx?urlName=" + HttpUtility.UrlEncode(urlName) + "&url=" + HttpUtility.UrlEncode(url) + "&userName=" + HttpUtility.UrlEncode(user.LoginId) + "&info=" + HttpUtility.UrlEncode("注册成功"));
             }
         }
+
+        
     }
 }
