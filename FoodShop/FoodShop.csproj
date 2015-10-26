@@ -196,6 +196,10 @@
     <Compile Include="ashx\ValidateCode.ashx.cs">
       <DependentUpon>ValidateCode.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Common\BaseCheckSession.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\WebCommon.cs" />
     <Compile Include="Master\MainFrame.Master.cs">
       <DependentUpon>MainFrame.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

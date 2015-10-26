@@ -12,12 +12,13 @@ namespace FoodShop.Member
         public string userName;
         public string urlName;
         public string url;
+        public string info;
         protected void Page_Load(object sender, EventArgs e)
         {
             url = Request.QueryString["url"] ?? "Index.aspx";
             urlName = Request.QueryString["urlName"] ?? "首页";
             userName = Request.QueryString["userName"];
-
+            info = Request.QueryString["info"];
         }
     }
 }

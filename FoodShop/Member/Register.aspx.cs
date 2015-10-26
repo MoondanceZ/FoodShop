@@ -12,8 +12,8 @@ namespace FoodShop.Member
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string url = Request.QueryString["url"];
-            string urlName = Request.QueryString["urlName"];
+            string url = Request.QueryString["url"] ?? "Index.aspx";
+            string urlName = Request.QueryString["urlName"] ?? "首页";
             if (IsPostBack)
             {
                 MODEL.User user = new MODEL.User();
@@ -29,11 +29,11 @@ namespace FoodShop.Member
                 {
                     if (!String.IsNullOrEmpty(url))
                     {
-                        Response.Redirect("Index.aspx?uid=" + Server.UrlEncode(user.LoginId));
+                        Response.Redirect("ShowMsg.aspx?uid=" + HttpUtility.UrlEncode(user.LoginId) + "&info" + HttpUtility.UrlEncode("注册成功"));
                     }
                     else
                     {
-                        Response.Redirect("Index.aspx?url=" + Server.UrlEncode(url) + "&urlName=" + Server.UrlEncode(urlName) + "&uid=" + Server.UrlEncode(user.LoginId));
+                        Response.Redirect("ShowMsg.aspx?url=" + HttpUtility.UrlEncode(url) + "&urlName=" + HttpUtility.UrlEncode(urlName) + "&uerName=" + HttpUtility.UrlEncode(user.LoginId) + "&info=" + HttpUtility.UrlEncode("注册成功"));
                     }
                 }
             }
