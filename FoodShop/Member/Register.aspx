@@ -159,7 +159,7 @@
                     </div>
 
                     <div class="submit">
-                        <input type="submit" value="注册" id="btnReg" />
+                        <input type="submit" value="注册" id="btnReg" /> 
                         <sup class="surely">*</sup><span>必填</span>
                     </div>                                      
                     <!-- .submit -->
