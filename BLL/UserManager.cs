@@ -60,5 +60,11 @@ namespace BLL
                 return false;
             }
         }
+
+        public MODEL.User GetModel(string userCookieName)
+        {
+            MODEL.User user = DAL.UserServices.GetModel(userCookieName);
+            return user;
+        }
     }
 }

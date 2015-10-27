@@ -181,6 +181,7 @@
     <Content Include="Member\index.html" />
     <Content Include="Member\Login.aspx" />
     <Content Include="Member\Register.aspx" />
+    <Content Include="Member\ShoppingCart.aspx" />
     <Content Include="Member\ShowMsg.aspx" />
     <Content Include="Member\Test.aspx" />
     <Content Include="product_page.html" />
@@ -230,6 +231,13 @@
     </Compile>
     <Compile Include="Member\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\ShowMsg.aspx.cs">
       <DependentUpon>ShowMsg.aspx</DependentUpon>

@@ -41,6 +41,7 @@ namespace DAL
             using (SqlDataReader sda = DBHelper.ExecuteReader(sql, System.Data.CommandType.Text, new SqlParameter("@userName", userName)))
             {
                 if (sda.HasRows)
+                {
                     if (sda.Read())
                     {
                         user = new MODEL.User();
@@ -56,8 +57,13 @@ namespace DAL
                         uType.Name = sda.GetString(9);
                         user.UType = uType;
                     }
+                    return user;
+                }
+                else
+                    return null;
+
             }
-            return user;
+            
         }
     }
 }

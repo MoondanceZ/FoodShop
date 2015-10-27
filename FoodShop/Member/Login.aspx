@@ -6,7 +6,14 @@
     <script type="text/javascript">
         $(function () {
             $("#btnReg").click(function () {
+                <% if (!string.IsNullOrEmpty(returnUrl))
+                   {%>
+                location.href = "Register.aspx?url=<%=returnUrl%>";
+                <%}
+                   else
+                   {%>
                 location.href = "Register.aspx";
+                <%}%>
             })
         })
     </script>
