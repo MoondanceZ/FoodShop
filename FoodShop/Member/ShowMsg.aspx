@@ -29,7 +29,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container_12">
 
-        <h4>尊敬的<span style="font-size: 25px; font-style: italic"><%= this.userName %></span>用户,恭喜您<%= this.info %>,您将在
+        <h4>尊敬的<span style="font-size: 25px; font-weight:bolder"><%= this.userName %></span>用户,恭喜您<%= this.info %>,您将在
             <span id="time" style="font-size: 20px; color: red">5</span>秒后跳转到<a style="text-decoration: none" href="<%= this.url%>"><%= this.urlName %></a></h4>
 
     </div>

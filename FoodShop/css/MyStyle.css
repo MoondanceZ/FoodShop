@@ -1,1 +1,11 @@
-﻿
+﻿.uinfomenu {
+    /*position:relative;*/
+    right: 840px;
+    display: block;
+    width: 70px;
+    height: 60px;
+    margin-top:-10px;
+    padding:0;
+    z-index:999;
+    display:none;
+}
