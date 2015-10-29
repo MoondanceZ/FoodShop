@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MODEL
 {
-    public class PrdType
-    {
-        public int Id { get; set; }
-        public int Type { get; set; }
+    public class ProductType
+    {        
+        public int PrdType { get; set; }
         public string TypeName { get; set; }
     }
 }

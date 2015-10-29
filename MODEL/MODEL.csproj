@@ -46,6 +46,7 @@
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserCollection.cs" />
     <Compile Include="UType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,15 +10,15 @@ namespace MODEL
     {
         public int Id { get; set; }
         //商品编号
-        public string No { get; set; }
+        public string PrdNo { get; set; }
         //商品名称
-        public string Name { get; set; }
+        public string PrdName { get; set; }
         //商品介绍
         public string Introduction { get; set; }
         //商品详细介绍
         public string ProductDetail { get; set; }
         //商品状态
-        public int Prdstation { get; set; }
+        public int PrdStation { get; set; }
         //商品图片
         public string[] PrdImg { get; set; }
         //旧价格
@@ -26,8 +26,9 @@ namespace MODEL
         //最新价格
         public decimal NewPrice { get; set; }
         //商品总类
-        public PrdType PrdType { get; set; }
+        public ProductType PrdType { get; set; }
         //商品评价
         public decimal AssignMark { get; set; }
+        //是否被收藏        
     }
 }
