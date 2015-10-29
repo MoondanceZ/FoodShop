@@ -72,6 +72,7 @@
     <Content Include="fonts\Segoeui.ttf" />
     <Content Include="images\content\Descr.WD3" />
     <Content Include="images\Descr.WD3" />
+    <Content Include="index.html" />
     <Content Include="Master\MainFrame.Master" />
     <Content Include="ashx\ValidateCode.ashx" />
     <Content Include="ashx\CheckVCode.ashx" />
@@ -176,11 +177,13 @@
     <Content Include="js\radio.js" />
     <Content Include="js\selectBox.js" />
     <Content Include="login.html" />
+    <Content Include="Member\CatalogGrid.aspx" />
     <Content Include="Member\HtmlPage1.html" />
     <Content Include="Member\Index.aspx" />
     <Content Include="Member\index.html" />
     <Content Include="Member\Login.aspx" />
     <Content Include="Member\Message.aspx" />
+    <Content Include="Member\MyCollection.aspx" />
     <Content Include="Member\ProductInfo.aspx" />
     <Content Include="Member\Register.aspx" />
     <Content Include="Member\ShoppingCart.aspx" />
@@ -214,6 +217,13 @@
     <Compile Include="Member\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Member\CatalogGrid.aspx.cs">
+      <DependentUpon>CatalogGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\CatalogGrid.aspx.designer.cs">
+      <DependentUpon>CatalogGrid.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Member\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,6 +244,13 @@
     </Compile>
     <Compile Include="Member\Message.aspx.designer.cs">
       <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\MyCollection.aspx.cs">
+      <DependentUpon>MyCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\MyCollection.aspx.designer.cs">
+      <DependentUpon>MyCollection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Member\ProductInfo.aspx.cs">
       <DependentUpon>ProductInfo.aspx</DependentUpon>

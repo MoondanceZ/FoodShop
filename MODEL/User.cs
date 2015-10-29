@@ -15,5 +15,6 @@ namespace MODEL
         public string Email { get; set; }
         public DateTime RegTime { get; set; }
         public UType UType { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
     }
 }

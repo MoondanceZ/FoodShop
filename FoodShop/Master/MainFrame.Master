@@ -55,7 +55,7 @@
             });
             $("#user").mouseover(function () {
                 //$("#user_menu").css("display", "block");               
-            })            
+            })
             $("#user_menu").mouseleave(function () {
                 $(this).hide();
             });
@@ -69,58 +69,24 @@
                 <div class="welcome">
                     <%if (this.user != null)
                       {%>
-                    <nav class="primary">
-                    <ul>   
-                        <li>
-                        <a id="user" style="text-decoration:underline" href="../Member/UserInfo.aspx?uid="+<%= user.LoginId %>><%= user.LoginId %></a>
-                            <ul  class="sub">
-                                <li>
-                                    <a href="../Member/UserInfo.aspx?uid="+<%= user.LoginId %>" target="_blank"> 个人中心 </a> 
-                                </li>
-                                <li>
-                                    <a href="../Member/UserSetting.aspx?uid="+<%= user.LoginId %>" target="_blank"> 帐号设置 </a>                         
-                                </li>
-                                <li>
-                                    <a class="quit" style="overflow:hidden" href="#" onclick="return false;"> 退出 </a> 
-                                </li>
-                            </ul>
-                        </li>                        
-                    </ul>
-                    </nav>
-                    <div style="float:left">  你有0条未读<a href="../Member/Message.aspx">消息</a>
-                    <div id="user_menu" class="uinfomenu">
-                        <div>
-                            <ul>
-                                <li>
-                                    <a href="../Member/UserInfo.aspx?uid="+<%= user.LoginId %>" target="_blank"> 个人中心 </a> 
-                                </li>
-                                <li>
-                                    <a href="../Member/UserSetting.aspx?uid="+<%= user.LoginId %>" target="_blank"> 帐号设置 </a>                         
-                                </li>
-                                <li>
-                                    <a class="quit" style="overflow:hidden" href="#" onclick="return false;"> 退出 </a> 
-                                </li>
-                            </ul>
-                        </div> 
-                        <span class="menu-arrow"> <em></em> </span> 
-                    </div>
-                        </div>
+                     <a id="user" style="text-decoration:underline" href="../Member/UserInfo.aspx?uid="+<%= user.LoginId %>><%= user.LoginId %></a>                    
+                     &nbsp;&nbsp;&nbsp;你有0条未读<a href="../Member/Message.aspx">消息</a>                                           
                     <%}
                       else
                       {%>
                      欢迎您 , 您可以<a href="../Member/Login.aspx">登陆</a> 或 <a href="../Member/Register.aspx">注册</a>.
-                    <%} %>
-                </div>
+                    <%} %>                     
                 <!-- .welcome -->
-            </div>           
-            <!-- .grid_6 -->
-            <div class="grid_3" style="float:right">
-                <div class="phone_top">
-                    Call Us 0772-8131233
-                </div>
-                <!-- .phone_top -->
+                </div>      
+        </div>     
+        <!-- .grid_6 -->
+        <div class="grid_3" style="float:right">
+            <div class="phone_top">
+                Call Us 0772-8131233
             </div>
-            <!-- .grid_3 -->
+            <!-- .phone_top -->
+        </div>
+        <!-- .grid_3 -->
     </div>
     <!-- #top -->
 
@@ -146,7 +112,7 @@
         <div class="grid_6">
             <ul id="cart_nav">
                 <li>
-                    <a class="cart_li" href="#">购物车 <span>￥0.00</span></a>
+                    <a class="cart_li" href="../Member/ShoppingCart.aspx">购物车 <span>￥0.00</span></a>
                     <ul class="cart_cont">
                         <li class="no_border">
                             <p>Recently added item(s)</p>
@@ -188,13 +154,13 @@
 
             <nav class="private">
                 <ul>
-                    <li><a href="#">我的账户</a></li>
+                    <li><a href="../Member/UserInfo.aspx">我的账户</a></li>
                     <li class="separator">|</li>
-                    <li><a href="#">我的收藏</a></li>
+                    <li><a href="../Member/MyCollection.aspx">我的收藏</a></li>
                     <li class="separator">|</li>
-                    <li><a href="login.html">登陆</a></li>
+                    <li><a href="../Member/Login.aspx">登陆</a></li>
                     <li class="separator">|</li>
-                    <li><a href="login.html">注册</a></li>
+                    <li><a href="../Member/Register.aspx">注册</a></li>
                 </ul>
             </nav>
             <!-- .private -->
@@ -265,10 +231,10 @@
         <div class="f_navigation">
             <div class="container_12">
                 <div class="grid_3">
-                    <h3>Contact Us</h3>
+                    <h3>联系我们</h3>
                     <ul class="f_contact">
-                        <li>49 Archdale, 2B Charlestone</li>
-                        <li>+777 (100) 1234</li>
+                        <li>浙江省杭州市滨江区</li>
+                        <li>+86 (0772) 1234</li>
                         <li>mail@example.com</li>
                     </ul>
                     <!-- .f_contact -->
@@ -276,13 +242,12 @@
                 <!-- .grid_3 -->
 
                 <div class="grid_3">
-                    <h3>Information</h3>
+                    <h3>关于信息</h3>
                     <nav class="f_menu">
                         <ul>
-                            <li><a href="#">About As</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Secure payment</a></li>
+                            <li><a href="#">关于我们</a></li>                            
+                            <li><a href="#">条款细则</a></li>
+                            <li><a href="#">安全支付</a></li>
                         </ul>
                     </nav>
                     <!-- .private -->
@@ -290,13 +255,14 @@
                 <!-- .grid_3 -->
 
                 <div class="grid_3">
-                    <h3>Costumer Servise</h3>
+                    <h3>隐私服务</h3>
                     <nav class="f_menu">
                         <ul>
-                            <li><a href="contact_us.html">Contact As</a></li>
-                            <li><a href="#">Return</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">隐私政策</a></li>
+                            <%--<li><a href="contact_us.html">联系我们</a></li>--%>
+                            <%--<li><a href="#">Return</a></li>--%>
+                            <li><a href="#">咨询</a></li>
+                            <li><a href="#">站点地图</a></li>
                         </ul>
                     </nav>
                     <!-- .private -->
@@ -304,13 +270,13 @@
                 <!-- .grid_3 -->
 
                 <div class="grid_3">
-                    <h3>My Account</h3>
+                    <h3>我的账户</h3>
                     <nav class="f_menu">
                         <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Order History</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Newsletter</a></li>
+                            <li><a href="#">账户</a></li>
+                            <li><a href="#">消费历史</a></li>
+                            <li><a href="#">收藏</a></li>
+                            <li><a href="#">消息</a></li>
                         </ul>
                     </nav>
                     <!-- .private -->
