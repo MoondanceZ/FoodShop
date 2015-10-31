@@ -9,9 +9,13 @@ namespace FoodShop.Member
 {
     public partial class CatalogGrid : System.Web.UI.Page
     {
+        protected List<MODEL.Product> listPrd;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                listPrd = BLL.ProductManage.GetAllProduct();
+            }
         }
     }
 }

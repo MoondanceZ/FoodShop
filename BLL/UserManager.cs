@@ -15,7 +15,7 @@ namespace BLL
         /// <returns></returns>
         public static bool AddUser(MODEL.User user)
         {
-            return DAL.UserServices.AddUser(user);
+            return DAL.UserService.AddUser(user);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace BLL
         /// <param name="user"></param>
         public bool UserLogin(string userName, string userPassword, out string msg, out MODEL.User user)
         {
-            user = DAL.UserServices.GetModel(userName);
+            user = DAL.UserService.GetModel(userName);
             if(user!=null)
             {
                 if(user.UType.Id==2)
@@ -63,7 +63,7 @@ namespace BLL
 
         public MODEL.User GetModel(string userCookieName)
         {
-            MODEL.User user = DAL.UserServices.GetModel(userCookieName);
+            MODEL.User user = DAL.UserService.GetModel(userCookieName);
             return user;
         }
     }

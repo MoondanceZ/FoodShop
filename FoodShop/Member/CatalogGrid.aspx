@@ -146,8 +146,32 @@
 			    <a class="sort_up" href="#">&#8593;</a>
 		     </div><!-- .sort -->
 	      </div><!-- .options -->
-	      
-	      <div class="grid_product">
+
+           <%if(listPrd.Count>0) 
+             {%>
+            <div class="grid_product">
+            <%  for (int i = 0; i < listPrd.Count; i++)
+               {%>                                                  
+		     <div class="grid_3 product">
+			    <div class="prev">
+				   <a href="product_page.html"><img src="../images/<%=listPrd[i].MainImg %>" alt="" title="" /></a>
+			    </div><!-- .prev -->
+			    <h3 class="title"><%= listPrd[i].PrdName %></h3>
+			    <div class="cart">
+				   <div class="price">
+					  <div class="vert">
+						 <div class="price_new">$<%=listPrd[i].NewPrice %></div>
+						 <div class="price_old">$<%=listPrd[i].OldPrice %></div>
+					  </div>
+				   </div>
+				   <a href="#" class="obn"></a>
+				   <a href="#" class="like"></a>
+				   <a href="#" class="bay"></a>
+			    </div><!-- .cart -->
+		     </div><!-- .grid_3 -->
+            <% } 
+	      } %>
+	      <%--  <div class="grid_product">
 		     <div class="grid_3 product">
 			    <div class="prev">
 				   <a href="product_page.html"><img src="../images/product_1.png" alt="" title="" /></a>
@@ -166,7 +190,7 @@
 			    </div><!-- .cart -->
 		     </div><!-- .grid_3 -->
 		     
-		     <div class="grid_3 product">
+		    <div class="grid_3 product">
 			    <img class="sale" src="../images/sale.png" alt="Sale"/>
 			    <div class="prev">
 				   <a href="product_page.html"><img src="../images/product_2.png" alt="" title="" /></a>
@@ -185,7 +209,7 @@
 			    </div><!-- .cart -->
 		     </div><!-- .grid_3 -->
 		     
-		     <div class="grid_3 product">
+		    <div class="grid_3 product">
 			    <img class="sale" src="../images/new.png" alt="New"/>
 			    <div class="prev">
 				   <a href="product_page.html"><img src="../images/product_3.png" alt="" title="" /></a>
@@ -370,7 +394,7 @@
 				   <a href="#" class="like"></a>
 				   <a href="#" class="bay"></a>
 			    </div><!-- .cart -->
-		     </div><!-- .grid_3 -->
+		     </div><!-- .grid_3 -->--%>
 	    
 	      <div class="clear"></div>
 	      </div><!-- .grid_product -->

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class UserServices
+    public class UserService
     {
         /// <summary>
         /// 添加用户
