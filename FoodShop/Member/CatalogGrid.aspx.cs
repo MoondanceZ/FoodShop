@@ -20,7 +20,8 @@ namespace FoodShop.Member
                 //listPrd = BLL.ProductManage.GetAllProduct();
                 listPrd = BLL.ProductManage.GetPagingPrd(pageIndex, pageSize, out total);
             }
-            this.NavStrHtml.Text = Common.LoadPager.ShowPageNavigate(pageIndex, pageSize, total);
+            //this.NavStrHtml.Text = Common.LoadPager.ShowPageNavigate(pageIndex, pageSize, total);
+            this.NavStrHtml.Text = Common.PageBar.ShowPageNavigate(pageIndex, pageSize, total);
         }
     }
 }

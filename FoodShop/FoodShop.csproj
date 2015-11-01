@@ -206,6 +206,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Common\LoadPager.cs" />
+    <Compile Include="Common\PageBar.cs" />
     <Compile Include="Common\WebCommon.cs" />
     <Compile Include="Master\MainFrame.Master.cs">
       <DependentUpon>MainFrame.Master</DependentUpon>
