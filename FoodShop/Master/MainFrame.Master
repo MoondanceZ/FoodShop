@@ -178,11 +178,11 @@
             <div class="grid_12">
                 <nav class="primary">
                     <ul>
-                        <li class="curent"><a href="index.html">Home</a></li>
-                        <li><a href="catalog_grid.html">Solids</a></li>
-                        <li><a href="catalog_grid.html">Liquids</a></li>
+                        <li class="curent"><a href="Index.aspx">主页</a></li>
+                        <li><a href="catalog_grid.html">果蔬鱼肉</a></li>
+                        <li><a href="catalog_grid.html">休闲零食</a></li>
                         <li>
-                            <a href="catalog_grid.html">Spray</a>
+                            <a href="catalog_grid.html">美酒佳酿</a>
                             <ul class="sub">
                                 <li><a href="catalog_grid.html">For home</a></li>
                                 <li><a href="catalog_grid.html">For Garden</a></li>
@@ -190,10 +190,13 @@
                                 <li><a href="catalog_grid.html">Other spray</a></li>
                             </ul>
                         </li>
-                        <li><a href="catalog_grid.html">Electric</a></li>
-                        <li><a href="catalog_grid.html">For cars</a></li>
+                        <li><a href="catalog_grid.html">粮油调味</a></li>
+                        <li><a href="catalog_grid.html">茶叶冲饮</a></li>
+                        <li><a href="catalog_grid.html">滋补养生</a></li>
+                        <li class="separator">|</li>
+                        <li><a href="CatalogGrid.aspx">所有商品</a></li>
                         <li>
-                            <a href="#">All pages</a>
+                            <a href="#">所有页</a>
                             <ul class="sub">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="text_page.html">Typography and basic styles</a></li>

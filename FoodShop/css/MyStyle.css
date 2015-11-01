@@ -9,3 +9,11 @@
     z-index:999;
     display:none;
 }
+
+.separator{
+	color: #e0e0e0;
+	font-size: 30px;
+	line-height: 35px;
+	margin: 0 2px;
+	float: left;
+}

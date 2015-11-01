@@ -12,10 +12,15 @@ namespace FoodShop.Member
         protected List<MODEL.Product> listPrd;
         protected void Page_Load(object sender, EventArgs e)
         {
+            int pageIndex = int.Parse(Request["pageIndex"] ?? "1");
+            int pageSize = int.Parse(Request["pageSize"] ?? "6");
+            int total = 0;
             if (!IsPostBack)
             {
-                listPrd = BLL.ProductManage.GetAllProduct();
+                //listPrd = BLL.ProductManage.GetAllProduct();
+                listPrd = BLL.ProductManage.GetPagingPrd(pageIndex, pageSize, out total);
             }
+            this.NavStrHtml.Text = Common.LoadPager.ShowPageNavigate(pageIndex, pageSize, total);
         }
     }
 }

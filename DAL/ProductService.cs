@@ -21,10 +21,13 @@ namespace DAL
         public static List<Product> GetPagingPrd(int pageIndex, int pageSize, out int total)
         {
             DataTable dt = new DataTable();
+            SqlParameter[] parameter = new SqlParameter[3];
+            parameter[0] = new SqlParameter("@pageIndex", pageIndex);
+            parameter[1] = new SqlParameter("@pageSize", pageSize);
             SqlParameter totalParameter = new SqlParameter("@total", SqlDbType.Int);
             totalParameter.Direction = ParameterDirection.Output;
-
-            dt = DBHelper.ExecuteDatable("P_loadPrdPageData", CommandType.StoredProcedure, totalParameter);
+            parameter[2] = totalParameter;
+            dt = DBHelper.ExecuteDatable("P_loadPrdPageData", CommandType.StoredProcedure, parameter);
             total = (int)totalParameter.Value;
             List<Product> pagePrd = Common.ConvertHelper<Product>.ConvertToList(dt);
             return pagePrd;
