@@ -49,7 +49,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// 返回单个只方法
+        /// 返回单个值方法
         /// </summary>
         /// <param name="sql"></param>
         /// <param name="cmdType"></param>

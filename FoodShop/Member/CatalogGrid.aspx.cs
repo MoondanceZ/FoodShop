@@ -9,7 +9,7 @@ namespace FoodShop.Member
 {
     public partial class CatalogGrid : System.Web.UI.Page
     {
-        protected List<MODEL.Product> listPrd;
+        protected List<MODEL.Product> ListPrd;
         protected void Page_Load(object sender, EventArgs e)
         {
             int pageIndex = int.Parse(Request["pageIndex"] ?? "1");
@@ -18,7 +18,7 @@ namespace FoodShop.Member
             if (!IsPostBack)
             {
                 //listPrd = BLL.ProductManage.GetAllProduct();
-                listPrd = BLL.ProductManage.GetPagingPrd(pageIndex, pageSize, out total);
+                ListPrd = BLL.ProductManager.GetPagingPrd(pageIndex, pageSize, out total);
             }
             //this.NavStrHtml.Text = Common.LoadPager.ShowPageNavigate(pageIndex, pageSize, total);
             this.NavStrHtml.Text = Common.PageBar.ShowPageNavigate(pageIndex, pageSize, total);

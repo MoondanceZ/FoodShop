@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    public class ProductManage
+    public class ProductManager
     {
         //获取商品分页数据
         public  static List<Product> GetPagingPrd(int pageIndex, int pageSize, out int total)
@@ -30,9 +30,19 @@ namespace BLL
         /// </summary>
         /// <param name="prd"></param>
         /// <returns></returns>
-        public static List<Product> GetPrd(string prd)
+        public static List<Product> GetPrdList(string prd)
         {
             return ProductService.GetPrdByNameOrNo(prd);
+        }
+
+        /// <summary>
+        /// 根据商品名称或编号获取商品
+        /// </summary>
+        /// <param name="prd"></param>
+        /// <returns></returns>
+        public static Product GetPrd(string prd)
+        {
+            return ProductService.GetPrd(prd);
         }
     }
 }

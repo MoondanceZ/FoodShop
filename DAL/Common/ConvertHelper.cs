@@ -12,7 +12,7 @@ namespace DAL.Common
     public class ConvertHelper<T> where T : new()
     {
         /// <summary>
-        /// 利用反射和泛型
+        /// 利用反射和泛型  dt转换为list
         /// </summary>
         /// <param name="dt"></param>
         /// <returns></returns>
@@ -53,7 +53,39 @@ namespace DAL.Common
             }
 
             return ts;
+        }
 
+        /// <summary>
+        /// DataReader转化为实体
+        /// </summary>
+        /// <param name="dr"></param>
+        /// <returns></returns>
+        public static T ConvertToModel(IDataReader dr)
+        {
+            T model = new T();
+            int count = dr.FieldCount;
+
+            PropertyInfo[] property_lst = model.GetType().GetProperties();
+            foreach (PropertyInfo property in property_lst)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    if (!Convert.IsDBNull(dr[i]))//判断值是否为空
+                    {
+                        string name = dr.GetName(i).ToUpper();//字段名
+                        if (name.Equals(property.Name.ToUpper()))//判断字段名是否和model里的相等
+                        {
+                            try
+                            {
+                                property.SetValue(model, dr.GetValue(i), null);//为model赋值
+                                break;
+                            }
+                            catch { }
+                        }
+                    }
+                }
+            }
+            return model;
         }
     }
 }

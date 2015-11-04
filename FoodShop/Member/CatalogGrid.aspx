@@ -1,6 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/MainFrame.Master" AutoEventWireup="true" CodeBehind="CatalogGrid.aspx.cs" Inherits="FoodShop.Member.CatalogGrid" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        $(function () {            
+            $("a[class='bay']").click(function () {
+                if (confirm("添加到购物车?")) {
+                    var PrdId = $(this).attr("PrdId");
+                    $.post("/ashx/AddPrd2Cart.ashx", { PrdId: PrdId }, function (data) {
+                        if (data == "NoLogin") {
+                            location.href = "Login.aspx";
+                        }
+                    })
+                }                
+            });
+        })
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="clear"></div>
@@ -164,28 +179,28 @@
                 </div>
                 <!-- .options -->
 
-                <%if (listPrd.Count > 0)
+                <%if (ListPrd.Count > 0)
                   {%>
                 <div class="grid_product">
-                    <%  for (int i = 0; i < listPrd.Count; i++)
+                    <%  for (int i = 0; i < ListPrd.Count; i++)
                         {%>
                     <div class="grid_3 product">
                         <div class="prev">
                             <a href="product_page.html">
-                                <img src="../images/<%=listPrd[i].MainImg %>" alt="" title="" /></a>
+                                <img src="../images/<%=ListPrd[i].MainImg %>" alt="" title="" /></a>
                         </div>
                         <!-- .prev -->
-                        <h3 class="title"><%= listPrd[i].PrdName %></h3>
+                        <h3 class="title"><%= ListPrd[i].PrdName %></h3>
                         <div class="cart">
                             <div class="price">
                                 <div class="vert">
-                                    <div class="price_new">$<%=listPrd[i].NewPrice %></div>
-                                    <div class="price_old">$<%=listPrd[i].OldPrice %></div>
+                                    <div class="price_new">￥<%=ListPrd[i].NewPrice %></div>
+                                    <div class="price_old">￥<%=ListPrd[i].OldPrice %></div>
                                 </div>
                             </div>
                             <a href="#" class="obn"></a>
                             <a href="#" class="like"></a>
-                            <a href="#" class="bay"></a>
+                            <a href="javascript:void(0)" PrdNo="<%=ListPrd[i].PrdNo %>" class="bay"></a>
                         </div>
                         <!-- .cart -->
                     </div>

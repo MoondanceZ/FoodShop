@@ -41,9 +41,28 @@ namespace DAL
         public static List<Product> GetPrdByNameOrNo(string prd)
         {
             string sql = @"seleact * from PRODUCT WHERE PRDNO LIKE '%@prd%' ORD PRDNAME like '%@prd%' and prdStation=1 ";
-            DataTable dt = DBHelper.ExecuteDatable(sql, CommandType.Text, new SqlParameter("@prd", prd));
-            //dt.AsEnumerable().ToList<Product>();
-            return Common.ConvertHelper<Product>.ConvertToList(dt);
+            DataTable dt = DBHelper.ExecuteDatable(sql, CommandType.Text, new SqlParameter("@prd", prd));            
+            if (dt.Rows.Count > 0)
+            {
+                return Common.ConvertHelper<Product>.ConvertToList(dt);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 根据编号和名称获取商品
+        /// </summary>
+        /// <param name="prd"></param>
+        /// <returns></returns>
+        public static Product GetPrd(string prd)
+        {
+            string sql = @"seleact * from PRODUCT WHERE PRDNO = '@prd' ORD PRDNAME like '@prd' and prdStation=1 ";
+            SqlDataReader dr = DBHelper.ExecuteReader(sql, CommandType.Text, new SqlParameter("@prd", prd));
+            Product product = Common.ConvertHelper<Product>.ConvertToModel(dr);
+            return product;
         }
 
         /// <summary>
@@ -54,7 +73,14 @@ namespace DAL
         {
             string sql = @"select * from PRODUCT WHERE prdStation=1 ";
             DataTable dt = DBHelper.ExecuteDatable(sql, CommandType.Text);
-            return Common.ConvertHelper<Product>.ConvertToList(dt);
+            if (dt.Rows.Count > 0)
+            {
+                return Common.ConvertHelper<Product>.ConvertToList(dt);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
