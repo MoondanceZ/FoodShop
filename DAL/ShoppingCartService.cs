@@ -11,6 +11,17 @@ namespace DAL
     public class ShoppingCartService
     {
         /// <summary>
+        /// 根据用户名找购物车
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <param name="PrdId"></param>
+        public static List<MODEL.ShoppingCart> ListCart(string UserId)
+        {
+            string sql = "@SELECT * FROM shoppingCart where userId=@userId settleStt=0 ";
+            SqlParameter[] parameter = { new SqlParameter("@userId", UserId) };
+            return Common.ConvertHelper<MODEL.ShoppingCart>.ConvertToList(DBHelper.ExecuteDatable(sql, CommandType.Text, parameter));
+        }
+        /// <summary>
         /// 根据用户名和编号查找购物车
         /// </summary>
         /// <param name="UserId"></param>

@@ -23,5 +23,15 @@ namespace BLL
         {
             DAL.ShoppingCartService.UpdateCart(cart);
         }
+
+        /// <summary>
+        /// 获取用户购物车
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public static List<MODEL.ShoppingCart> GetCart(string UserId)
+        {
+            return DAL.ShoppingCartService.ListCart(UserId);
+        }
     }
 }
