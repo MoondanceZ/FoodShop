@@ -40,7 +40,7 @@ namespace DAL
         /// <returns></returns>
         public static List<Product> GetPrdByNameOrNo(string prd)
         {
-            string sql = @"seleact * from PRODUCT WHERE PRDNO LIKE '%@prd%' ORD PRDNAME like '%@prd%' and prdStation=1 ";
+            string sql = @"select * from PRODUCT WHERE PRDNO LIKE '%@prd%' ORD PRDNAME like '%@prd%' and prdStation=1 ";
             DataTable dt = DBHelper.ExecuteDatable(sql, CommandType.Text, new SqlParameter("@prd", prd));            
             if (dt.Rows.Count > 0)
             {
@@ -55,14 +55,19 @@ namespace DAL
         /// <summary>
         /// 根据编号和名称获取商品
         /// </summary>
-        /// <param name="prd"></param>
+        /// <param name="PrdNo"></param>
         /// <returns></returns>
-        public static Product GetPrd(string prd)
+        public static Product GetPrd(string PrdNo)
         {
-            string sql = @"seleact * from PRODUCT WHERE PRDNO = '@prd' ORD PRDNAME like '@prd' and prdStation=1 ";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql, CommandType.Text, new SqlParameter("@prd", prd));
-            Product product = Common.ConvertHelper<Product>.ConvertToModel(dr);
-            return product;
+            string sql = @"select * from PRODUCT WHERE prdNo = @PrdNo and prdStation=1 ";
+            SqlDataReader dr = DBHelper.ExecuteReader(sql, CommandType.Text, new SqlParameter("@PrdNo",PrdNo));
+            if (dr.Read())  //读取下一条数据
+            {
+                Product product = Common.ConvertHelper<Product>.ConvertToModel(dr);
+                return product;
+            }
+            else
+                return null;
         }
 
         /// <summary>

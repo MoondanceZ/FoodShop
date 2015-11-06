@@ -38,11 +38,11 @@ namespace BLL
         /// <summary>
         /// 根据商品名称或编号获取商品
         /// </summary>
-        /// <param name="prd"></param>
+        /// <param name="PrdNo"></param>
         /// <returns></returns>
-        public static Product GetPrd(string prd)
+        public static Product GetPrd(string PrdNo)
         {
-            return ProductService.GetPrd(prd);
+            return ProductService.GetPrd(PrdNo);
         }
     }
 }

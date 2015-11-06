@@ -3,16 +3,18 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript">
-        $(function () {            
+        $(function () {
             $("a[class='bay']").click(function () {
                 if (confirm("添加到购物车?")) {
-                    var PrdId = $(this).attr("PrdId");
-                    $.post("/ashx/AddPrd2Cart.ashx", { PrdId: PrdId }, function (data) {
+                    var PrdNo = $(this).attr("PrdNo");
+                    $.post("/ashx/AddPrd2Cart.ashx", { PrdNo: PrdNo }, function (data) {
                         if (data == "NoLogin") {
                             location.href = "Login.aspx";
+                        } else {
+                            $(".private").before(data);
                         }
                     })
-                }                
+                }
             });
         })
     </script>
@@ -74,22 +76,28 @@
 
                     <form action="#" class="check_opt">
                         <p>
-                            <input class="niceCheck" type="checkbox" />For Home (23)</p>
+                            <input class="niceCheck" type="checkbox" />For Home (23)
+                        </p>
                         <p>
-                            <input class="niceCheck" type="checkbox" name="" value="" />For Car (27)</p>
+                            <input class="niceCheck" type="checkbox" name="" value="" />For Car (27)
+                        </p>
                         <p>
-                            <input class="niceCheck" type="checkbox" name="" value="" />For Office (9)</p>
+                            <input class="niceCheck" type="checkbox" name="" value="" />For Office (9)
+                        </p>
                     </form>
 
                     <h4>Price</h4>
 
                     <form action="#" class="check_opt">
                         <p>
-                            <input class="niceCheck" type="checkbox" name="" value="" />0.00 - $49.99 (21)</p>
+                            <input class="niceCheck" type="checkbox" name="" value="" />0.00 - $49.99 (21)
+                        </p>
                         <p>
-                            <input class="niceCheck" type="checkbox" name="" value="" />$50.00 - $99.99 (7)</p>
+                            <input class="niceCheck" type="checkbox" name="" value="" />$50.00 - $99.99 (7)
+                        </p>
                         <p>
-                            <input class="niceCheck" type="checkbox" name="" value="" />0$100.00 and above (15)</p>
+                            <input class="niceCheck" type="checkbox" name="" value="" />0$100.00 and above (15)
+                        </p>
                     </form>
                 </aside>
                 <!-- #shop_by -->
@@ -153,10 +161,10 @@
 
                     <div class="show">
                         显示
-			    <select>                    
-                    <option value="3">3</option>                   
-                    <option value="6">6</option>                    
-                    <option value="9">9</option>                    
+			    <select>
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
                     <option value="12">12</option>
                     <option value="16">16</option>
                 </select>
@@ -206,7 +214,7 @@
                     </div>
                     <!-- .grid_3 -->
                     <% }
-             } %>
+                  } %>
                     <div class="clear"></div>
                 </div>
                 <!-- .grid_product -->

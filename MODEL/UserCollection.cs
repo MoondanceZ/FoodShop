@@ -10,7 +10,7 @@ namespace MODEL
     {
         public int Id { get; set; }
         public string UserId { get; set; }
-        public string PrdId { get; set; }
+        public string PrdNo { get; set; }
         public int IsCollection { get; set; }
     }
 }

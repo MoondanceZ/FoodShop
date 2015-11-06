@@ -110,7 +110,7 @@
         <!-- .grid_3 -->
 
         <div class="grid_6">
-            <ul id="cart_nav">
+           <%-- <ul id="cart_nav">
                 <li>
                     <a class="cart_li" href="../Member/ShoppingCart.aspx">购物车 <span>￥0.00</span></a>
                     <ul class="cart_cont">
@@ -150,7 +150,7 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ul>--%>
 
             <nav class="private">
                 <ul>
