@@ -845,7 +845,7 @@ aside h4{
 }
 .left_menu ul li:hover{
 	height: 39px;
-	background: #f5f7f9;
+	background: #a8dade;
 	border-top: 1px solid #fff;
 	margin: 0 -6px;
 	padding: 0 6px;
@@ -853,7 +853,7 @@ aside h4{
 }
 .left_menu ul li+li:hover a{
 	height: 39px;
-	background: #f5f7f9;
+	background: #a8dade;
 	border: 0 none;
 	margin: 0 -6px;
 	padding: 0 6px;
@@ -864,12 +864,12 @@ aside h4{
 	margin: 0 -6px;
 	padding: 0 6px;
 	height: 38px;
-	background: #7ac5ce;
+	background: #a8dade;
 	border: 1px solid #71b9c1;
 }
 .left_menu ul li.current a{
 	display: block;
-	color: #fff;
+	color: #a8dade;
 	height: 38px;
 	text-decoration: none;
 	font:bold 13px/40px Segoeui, Arial, Verdana, serif;

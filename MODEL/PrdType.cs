@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace MODEL
 {
-    public class ProductType
-    {        
-        public int PrdType { get; set; }
-        public string TypeName { get; set; }
+    public enum ProductType
+    {
+        所有商品 = 0,
+        果蔬鱼肉 = 1,
+        休闲零食 = 2,
+        美酒佳酿 = 3,
+        粮油调味 = 4,
+        茶叶饮料 = 5,
+        滋补养生 = 6
     }
 }

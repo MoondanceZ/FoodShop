@@ -41,7 +41,7 @@ namespace DAL
         public static List<Product> GetPrdByNameOrNo(string prd)
         {
             string sql = @"select * from PRODUCT WHERE PRDNO LIKE '%@prd%' ORD PRDNAME like '%@prd%' and prdStation=1 ";
-            DataTable dt = DBHelper.ExecuteDatable(sql, CommandType.Text, new SqlParameter("@prd", prd));            
+            DataTable dt = DBHelper.ExecuteDatable(sql, CommandType.Text, new SqlParameter("@prd", prd));
             if (dt.Rows.Count > 0)
             {
                 return Common.ConvertHelper<Product>.ConvertToList(dt);
@@ -60,7 +60,7 @@ namespace DAL
         public static Product GetPrd(string PrdNo)
         {
             string sql = @"select * from PRODUCT WHERE prdNo = @PrdNo and prdStation=1 ";
-            SqlDataReader dr = DBHelper.ExecuteReader(sql, CommandType.Text, new SqlParameter("@PrdNo",PrdNo));
+            SqlDataReader dr = DBHelper.ExecuteReader(sql, CommandType.Text, new SqlParameter("@PrdNo", PrdNo));
             if (dr.Read())  //读取下一条数据
             {
                 Product product = Common.ConvertHelper<Product>.ConvertToModel(dr);
@@ -87,5 +87,25 @@ namespace DAL
                 return null;
             }
         }
+
+        public static List<Product> GetPrdList(string prdType, string orderBy, string AscOrDesc, int pageIndex, int pageSize, out int total)
+        {
+            DataTable dt = new DataTable();
+            SqlParameter[] parameter = new SqlParameter[6];
+            parameter[0] = new SqlParameter("@prdType", prdType);
+            parameter[1] = new SqlParameter("@orderBy", orderBy);
+            parameter[2] = new SqlParameter("@AscOrDesc", AscOrDesc);
+            parameter[3] = new SqlParameter("@pageIndex", pageIndex);
+            parameter[4] = new SqlParameter("@pageSize", pageSize);
+            SqlParameter totalParameter = new SqlParameter("@total", SqlDbType.Int);
+            totalParameter.Direction = ParameterDirection.Output;
+            parameter[5] = totalParameter;
+            dt = DBHelper.ExecuteDatable("P_loadPrdPageDataBySearch", CommandType.StoredProcedure, parameter);
+            total = (int)totalParameter.Value;
+            List<Product> pagePrd = Common.ConvertHelper<Product>.ConvertToList(dt);
+            return pagePrd;
+            
+        }
+
     }
 }

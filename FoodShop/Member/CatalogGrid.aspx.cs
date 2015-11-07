@@ -16,12 +16,11 @@ namespace FoodShop.Member
             int pageSize = int.Parse(Request["pageSize"] ?? "6");
             int total = 0;
             if (!IsPostBack)
-            {
-                //listPrd = BLL.ProductManage.GetAllProduct();
+            {                           
                 ListPrd = BLL.ProductManager.GetPagingPrd(pageIndex, pageSize, out total);
             }
             //this.NavStrHtml.Text = Common.LoadPager.ShowPageNavigate(pageIndex, pageSize, total);
             this.NavStrHtml.Text = Common.PageBar.ShowPageNavigate(pageIndex, pageSize, total);
-        }
+        }       
     }
 }

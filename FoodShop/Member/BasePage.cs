@@ -7,6 +7,7 @@ namespace FoodShop.Member
 {
     public class BasePage : System.Web.UI.Page
     {
+        public BasePage() { }
 
     }
 }

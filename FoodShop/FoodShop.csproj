@@ -78,6 +78,8 @@
     <Content Include="ashx\ValidateCode.ashx" />
     <Content Include="ashx\CheckVCode.ashx" />
     <Content Include="ashx\AddPrd2Cart.ashx" />
+    <Content Include="ashx\LoadShoppingCart.ashx" />
+    <Content Include="ashx\LoadPrdList.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -204,6 +206,12 @@
     <Compile Include="ashx\CheckVCode.ashx.cs">
       <DependentUpon>CheckVCode.ashx</DependentUpon>
     </Compile>
+    <Compile Include="ashx\LoadPrdList.ashx.cs">
+      <DependentUpon>LoadPrdList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ashx\LoadShoppingCart.ashx.cs">
+      <DependentUpon>LoadShoppingCart.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ashx\ValidateCode.ashx.cs">
       <DependentUpon>ValidateCode.ashx</DependentUpon>
     </Compile>
@@ -211,6 +219,9 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Common\LoadPager.cs" />
+    <Compile Include="Common\LoadShoppingCart.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Common\PageBar.cs" />
     <Compile Include="Common\WebCommon.cs" />
     <Compile Include="Global.asax.cs">

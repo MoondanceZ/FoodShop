@@ -44,5 +44,20 @@ namespace BLL
         {
             return ProductService.GetPrd(PrdNo);
         }
+
+        /// <summary>
+        /// 获取商品列表
+        /// </summary>
+        /// <param name="prdType"></param>
+        /// <param name="orderBy"></param>
+        /// <param name="AscOrDesc"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="total"></param>
+        /// <returns></returns>
+        public static List<Product> GetPrdList(string prdType, string orderBy, string AscOrDesc, int pageIndex, int pageSize, out int total)
+        {
+            return DAL.ProductService.GetPrdList(prdType, orderBy, AscOrDesc, pageIndex, pageSize, out total);
+        }
     }
 }

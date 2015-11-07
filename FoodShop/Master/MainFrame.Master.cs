@@ -9,6 +9,7 @@ namespace FoodShop.Master
 {
     public partial class MainFrame : System.Web.UI.MasterPage
     {
+        public string StrCart = string.Empty;
         public MODEL.User user = null;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,6 +17,7 @@ namespace FoodShop.Master
             {
                 user = Session["userInfo"] as MODEL.User;
             }
-        }
+            StrCart = Common.LoadShoppingCart.GetCartByUser();
+        }        
     }
 }
