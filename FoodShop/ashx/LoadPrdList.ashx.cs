@@ -21,13 +21,12 @@ namespace FoodShop.ashx
             int pageIndex = 1;
             int total = 0;
 
-            List<MODEL.Product> ListPrd = BLL.ProductManager.GetPrdList(prdType, orderBy, AscOrDesc, pageIndex, pageSize, total);
+            List<MODEL.Product> ListPrd = BLL.ProductManager.GetPrdList(prdType, orderBy, AscOrDesc, pageIndex, pageSize, out total);
             context.Response.ContentType = "text/plain";
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < ListPrd.Count; i++)
             {
-                sb.Append(@"<div class='grid_product'>                           
-                            <div class='grid_3 product'>
+                sb.Append(@"<div class='grid_3 product'>
                                 <div class='prev'>
                                     <a href='product_page.html'>");
                 sb.AppendFormat(@"<img src='../images/{0}' alt='' title='' /></a>", ListPrd[i].MainImg);
@@ -35,9 +34,9 @@ namespace FoodShop.ashx
                          <!-- .prev -->");
                 sb.AppendFormat(@"<h3 class='title'>{0}</h3>", ListPrd[i].PrdName);
                 sb.Append(@" <div class='cart'>
-                            <div class='price'>
-                                <div class='vert'>");
-                sb.AppendFormat(@"<div class='price_new'>￥{}</div>", ListPrd[i].NewPrice);
+                                <div class='price'>
+                                    <div class='vert'>");
+                sb.AppendFormat(@"<div class='price_new'>￥{0}</div>", ListPrd[i].NewPrice);
                 if (ListPrd[i].OldPrice != 0 || ListPrd[i].OldPrice > ListPrd[i].NewPrice)
                 {
                     sb.AppendFormat(@"<div class='price_old'>￥{0}</div>", ListPrd[i].OldPrice);
@@ -50,7 +49,8 @@ namespace FoodShop.ashx
                                 <a href='javascript:void(0)' prdno='{0}' class='bay'></a>
                               </div>
                                 <!-- .cart -->
-                            </div>", ListPrd[i].PrdNo);                
+                        </div>
+                        <!--grid_3_product-->", ListPrd[i].PrdNo);                
             }
             context.Response.Write(sb.ToString());
         }

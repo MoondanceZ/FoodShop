@@ -37,7 +37,7 @@
                 //每页显示数
                 this.pageSize = $("#ShowPageSize option:selected").val();
             }
-                   
+
             //点击分类
             $(".left_menu ul li").click(function () {
                 $(this).addClass("AddLiClr").siblings().removeClass("AddLiClr");
@@ -71,10 +71,10 @@
                 prdType: StrSearch.prdType,
                 orderBy: StrSearch.orderBy,
                 AscOrDesc: StrSearch.AscOrDesc,
-                pageSize: StrSearchpageSize
+                pageSize: StrSearch.pageSize
             }, function (data) {
                 if (data != "error") {
-                    $("#PrdList").html(data)
+                    $(".grid_product").html(data)
                 }
             })
         }
@@ -105,14 +105,14 @@
 
                         <nav class="left_menu">
                             <ul>
-                                <li class="AddLiClr"><a href="javascript:void(0)" prdType="0">所有商品<span>(99)</span></a></li>
-                                <li><a href="javascript:void(0)" prdType="1">果蔬鱼肉 <span>(21)</span></a></li>
-                                <li><a href="javascript:void(0)" prdType="2">休闲零食 <span>(27)</span></a></li>
-                                <li><a href="javascript:void(0)" prdType="3">美酒佳酿 <span>(33)</span></a></li>
-                                <li><a href="javascript:void(0)" prdType="4">粮油调味 <span>(17)</span></a></li>
-                                <li><a href="javascript:void(0)" prdType="5">茶叶饮料 <span>(23)</span></a></li>
-                                <li><a href="javascript:void(0)" prdType="6">滋补养生 <span>(7)</span></a></li>
-                                <li class="last"><a href="javascript:void(0)" prdType="7">其他 <span>(135)</span></a></li>
+                                <li class="AddLiClr"><a href="javascript:void(0)" prdtype="0">所有商品<span>(99)</span></a></li>
+                                <li><a href="javascript:void(0)" prdtype="1">果蔬鱼肉 <span>(21)</span></a></li>
+                                <li><a href="javascript:void(0)" prdtype="2">休闲零食 <span>(27)</span></a></li>
+                                <li><a href="javascript:void(0)" prdtype="3">美酒佳酿 <span>(33)</span></a></li>
+                                <li><a href="javascript:void(0)" prdtype="4">粮油调味 <span>(17)</span></a></li>
+                                <li><a href="javascript:void(0)" prdtype="5">茶叶饮料 <span>(23)</span></a></li>
+                                <li><a href="javascript:void(0)" prdtype="6">滋补养生 <span>(7)</span></a></li>
+                                <li class="last"><a href="javascript:void(0)" prdtype="7">其他 <span>(135)</span></a></li>
                             </ul>
                         </nav>
                         <!-- .left_menu -->
@@ -236,47 +236,45 @@
                         <div class="sort">
                             排序:
 			            <select id="ShowOrderBy">
-                            <option value="1">价格</option>
-                            <option value="2">种类</option>
-                            <option value="3">评价</option>
-                            <option value="4">名称</option>
+                            <option value="prdName">名称</option>
+                            <option value="newPrice">价格</option>
+                            <option value="prdType">种类</option>
+                            <option value="assignMark">评价</option>
                         </select>
                             <a class="sort_up" href="javascript:void(0)">&#8593;</a>
                         </div>
                         <!-- .sort -->
                     </div>
                     <!-- .options -->
-                    <div id="PrdList">
+
+                    <div class="grid_product">
                         <%if (ListPrd.Count > 0)
                           {%>
-                        <div class="grid_product">
-                            <%  for (int i = 0; i < ListPrd.Count; i++)
-                                {%>
-                            <div class="grid_3 product">
-                                <div class="prev">
-                                    <a href="product_page.html">
-                                        <img src="../images/<%=ListPrd[i].MainImg %>" alt="" title="" /></a>
-                                </div>
-                                <!-- .prev -->
-                                <h3 class="title"><%= ListPrd[i].PrdName %></h3>
-                                <div class="cart">
-                                    <div class="price">
-                                        <div class="vert">
-                                            <div class="price_new">￥<%=ListPrd[i].NewPrice %></div>
-                                            <div class="price_old">￥<%=ListPrd[i].OldPrice %></div>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="obn"></a>
-                                    <a href="#" class="like"></a>
-                                    <a href="javascript:void(0)" prdno="<%=ListPrd[i].PrdNo %>" class="bay"></a>
-                                </div>
-                                <!-- .cart -->
+                        <%  for (int i = 0; i < ListPrd.Count; i++)
+                            {%>
+                        <div class="grid_3 product">
+                            <div class="prev">
+                                <a href="product_page.html">
+                                    <img src="../images/<%=ListPrd[i].MainImg %>" alt="" title="" /></a>
                             </div>
-                            <!-- .grid_3 -->
-                            <% }
-                          } %>
+                            <!-- .prev -->
+                            <h3 class="title"><%= ListPrd[i].PrdName %></h3>
+                            <div class="cart">
+                                <div class="price">
+                                    <div class="vert">
+                                        <div class="price_new">￥<%=ListPrd[i].NewPrice %></div>
+                                        <div class="price_old">￥<%=ListPrd[i].OldPrice %></div>
+                                    </div>
+                                </div>
+                                <a href="#" class="obn"></a>
+                                <a href="#" class="like"></a>
+                                <a href="javascript:void(0)" prdno="<%=ListPrd[i].PrdNo %>" class="bay"></a>
+                            </div>
+                            <!-- .cart -->
                         </div>
-                        <!--PrdList-->
+                        <!-- .grid_3 -->
+                        <% }
+                          } %>
                         <div class="clear"></div>
                     </div>
                     <!-- .grid_product -->
