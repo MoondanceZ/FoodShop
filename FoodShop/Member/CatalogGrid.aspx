@@ -32,7 +32,7 @@
                 this.orderBy = $("#ShowOrderBy option:selected").val();
 
                 //升序还是降序
-                this.AscOrDesc = $("#sort_up").text() == "&#8593;" ? "ASC" : "DESC";
+                this.AscOrDesc = $(".sort_up").text() == "↑" ? "ASC" : "DESC";
 
                 //每页显示数
                 this.pageSize = $("#ShowPageSize option:selected").val();
