@@ -16,7 +16,7 @@
                         if (data == "NoLogin") {
                             location.href = "Login.aspx";
                         } else {
-                            $("#cartNav").html(data);
+                            $("#cartNav").html(data);  
                         }
                     })
                 }
