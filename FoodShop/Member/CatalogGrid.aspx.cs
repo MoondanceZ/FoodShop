@@ -14,13 +14,17 @@ namespace FoodShop.Member
         {
             int pageIndex = int.Parse(Request["pageIndex"] ?? "1");
             int pageSize = int.Parse(Request["pageSize"] ?? "6");
+            string prdType = Request["prdType"] ?? "0";
+            string AscOrDesc = Request["AscOrDesc"] ?? "ASC";
+            string orderBy = Request["orderBy"] ?? "prdName";
+
             int total = 0;
             if (!IsPostBack)
-            {                           
-                ListPrd = BLL.ProductManager.GetPagingPrd(pageIndex, pageSize, out total);
+            {
+                ListPrd = BLL.ProductManager.GetPrdList(prdType, orderBy, AscOrDesc, pageIndex, pageSize, out total);
             }
             //this.NavStrHtml.Text = Common.LoadPager.ShowPageNavigate(pageIndex, pageSize, total);
-            this.NavStrHtml.Text = Common.PageBar.ShowPageNavigate(pageIndex, pageSize, total);
-        }       
+            this.NavStrHtml.Text = Common.PageBar.ShowPageNavigate(prdType, orderBy, AscOrDesc, pageIndex, pageSize, total);
+        }         
     }
 }

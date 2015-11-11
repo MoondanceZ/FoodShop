@@ -8,7 +8,7 @@
     </style>
     <script src="../js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript">
-        $(function () {
+        $(document).ready(function () {
             $("a[class='bay']").click(function () {
                 if (confirm("添加到购物车?")) {
                     var PrdNo = $(this).attr("prdno");
@@ -16,7 +16,7 @@
                         if (data == "NoLogin") {
                             location.href = "Login.aspx";
                         } else {
-                            $("#cartNav").html(data);  
+                            $("#cartNav").html(data);
                         }
                     })
                 }
@@ -38,21 +38,37 @@
                 this.pageSize = $("#ShowPageSize option:selected").val();
             }
 
+            function SetPageHref(StrSearch) {
+                $(".pagination").find("a").each(function () {
+                    if ($(this).parent().hasClass("prev") || $(this).parent().hasClass("next")) {
+                        return true;
+                    }
+                    else {                        
+                        var href = $(this).attr("href");
+                        href = href.substring(0, href.indexOf('&'));
+                        $(this).attr("href", href + "&prdType=" + StrSearch.prdType + "&orderBy=" + StrSearch.orderBy + "&AscOrDesc=" + StrSearch.AscOrDesc + "&pageSize=" + StrSearch.pageSize);
+                    }
+                })
+            }           
+
             //点击分类
             $(".left_menu ul li").click(function () {
                 $(this).addClass("AddLiClr").siblings().removeClass("AddLiClr");
                 var strSearch = new StrSearch();
                 //alert(strSearch.prdType);
+                SetPageHref(strSearch);
                 GetPrdList(strSearch);
             })
             //每页显示数
             $("#ShowPageSize").change(function () {
                 var strSearch = new StrSearch();
+                SetPageHref(strSearch);
                 GetPrdList(strSearch);
             })
             //种类排序
             $("#ShowOrderBy").change(function () {
                 var strSearch = new StrSearch();
+                SetPageHref(strSearch);
                 GetPrdList(strSearch);
             })
             $(".sort_up").click(function () {
@@ -62,6 +78,7 @@
                     $(this).text("↑")
                 }
                 var strSearch = new StrSearch();
+                SetPageHref(strSearch);
                 GetPrdList(strSearch);
             })
         })
