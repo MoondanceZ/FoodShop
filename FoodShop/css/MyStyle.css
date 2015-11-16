@@ -17,3 +17,33 @@
 	margin: 0 2px;
 	float: left;
 }
+
+.welcome ul li ul li{
+    float:none;    
+    margin:0;
+}
+
+.welcome ul li ul li a{
+    background:none;
+}
+
+.welcome ul li ul li a:hover{
+     background:#b2cbba; 
+     color:#0f4a68;
+}
+
+.welcome ul li ul{    
+    display:none;
+    width:70px;
+    margin-top:0px;
+}
+
+.welcome ul li:hover ul {
+    position:absolute;
+    display:block
+}   
+
+.welcome ul li{
+    float:left;
+    margin-left:5px;
+}

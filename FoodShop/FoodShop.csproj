@@ -188,6 +188,7 @@
     <Content Include="Member\Message.aspx" />
     <Content Include="Member\MyCollection.aspx" />
     <Content Include="Member\ProductInfo.aspx" />
+    <Content Include="Member\product_page.html" />
     <Content Include="Member\Register.aspx" />
     <Content Include="Member\ShoppingCart.aspx" />
     <Content Include="Member\ShowMsg.aspx" />

@@ -11,11 +11,16 @@
     <link href="../css/style.css" rel="stylesheet" />
     <link href="../css/grid.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="../css/MyStyle.css" rel="stylesheet" />
+    <link href="../css/jquery.jqzoom.css" rel="stylesheet" />
 
     <script src="../js/jquery-1.7.2.min.js"></script>
     <script src="../js/html5.js"></script>
     <script src="../js/jflow.plus.js"></script>
     <script src="../js/jquery.carouFredSel-5.2.2-packed.js"></script>
+    <script src="../js/checkbox.js"></script>
+    <script src="../js/radio.js"></script>
+    <script src="../js/selectBox.js"></script>  
+    <script src="../js/jquery.jqzoom-core.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -78,12 +83,31 @@
 <body>
     <div class="container_12">        
         <div id="top">
+            <div class="grid_3">
+            <div class="phone_top">
+                Call Us 0772-8131233
+            </div>
+            <!-- .phone_top -->
+        </div>
+        <!-- .grid_3 -->
             <div class="grid_6">
-                <div class="welcome">
+                <div class="welcome" style="float:right">
                     <%if (this.user != null)
                       {%>
-                     <a id="user" style="text-decoration:underline" href="../Member/UserInfo.aspx?uid="+<%= user.LoginId %>><%= user.LoginId %></a>                    
-                     &nbsp;&nbsp;&nbsp;你有0条未读<a href="../Member/Message.aspx">消息</a>                                           
+                    <ul>
+                        <li>                            
+                            <a id="user" style="text-decoration:underline" href="../Member/UserInfo.aspx?uid="+<%= user.LoginId %>><%= user.LoginId %></a>                                
+                            <ul>
+                                <li><a href="#">个人中心</a></li>
+                                <li><a href="#">设置</a></li>
+                                <li><a href="#">注销</a></li>
+                                <li><a href="#">退出</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            &nbsp;&nbsp;&nbsp;你有0条未读<a href="../Member/Message.aspx">消息</a>
+                        </li>
+                    </ul>                         
                     <%}
                       else
                       {%>
@@ -92,14 +116,7 @@
                 <!-- .welcome -->
                 </div>      
         </div>     
-        <!-- .grid_6 -->
-        <div class="grid_3" style="float:right">
-            <div class="phone_top">
-                Call Us 0772-8131233
-            </div>
-            <!-- .phone_top -->
-        </div>
-        <!-- .grid_3 -->
+        <!-- .grid_6 -->        
     </div>
     <!-- #top -->
 

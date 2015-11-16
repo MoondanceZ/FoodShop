@@ -1,6 +1,68 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/MainFrame.Master" AutoEventWireup="true" CodeBehind="ProductInfo.aspx.cs" Inherits="FoodShop.Member.ProductInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script src="../js/jquery-1.7.2.min.js"></script>
+    <%--<script src="../js/jquery.jqzoom-core.js"></script>--%>
+    <script>
+        $(document).ready(function () {
+            $('.jqzoom').jqzoom({
+                zoomType: 'standard',
+                lens: true,
+                preloadImages: true,
+                alwaysOn: false
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("select").selectBox();
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#wrapper_tab a').click(function () {
+                if ($(this).attr('class') != $('#wrapper_tab').attr('class')) {
+                    $('#wrapper_tab').attr('class', $(this).attr('class'));
+                }
+                return false;
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('#list_product').carouFredSel({
+                prev: '#prev_c1',
+                next: '#next_c1',
+                auto: false
+            });
+            $('#list_banners').carouFredSel({
+                prev: '#ban_prev',
+                next: '#ban_next',
+                scroll: 1,
+                auto: false
+            });
+            $('#thumblist').carouFredSel({
+                prev: '#img_prev',
+                next: '#img_next',
+                scroll: 1,
+                auto: false,
+                circular: false,
+            });
+            $(window).resize();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $(this).addClass('click')
+            });
+        })
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="clear"></div>
@@ -13,14 +75,13 @@
 
                     <nav class="left_menu">
                         <ul>
-                            <li class="AddLiClr"><a href="javascript:void(0)" prdtype="0">所有商品<span>(99)</span></a></li>
-                            <li><a href="javascript:void(0)" prdtype="1">果蔬鱼肉 <span>(21)</span></a></li>
-                            <li><a href="javascript:void(0)" prdtype="2">休闲零食 <span>(27)</span></a></li>
-                            <li><a href="javascript:void(0)" prdtype="3">美酒佳酿 <span>(33)</span></a></li>
-                            <li><a href="javascript:void(0)" prdtype="4">粮油调味 <span>(17)</span></a></li>
-                            <li><a href="javascript:void(0)" prdtype="5">茶叶饮料 <span>(23)</span></a></li>
-                            <li><a href="javascript:void(0)" prdtype="6">滋补养生 <span>(7)</span></a></li>
-                            <li class="last"><a href="javascript:void(0)" prdtype="7">其他 <span>(135)</span></a></li>
+                            <li><a href="#">Solids <span>(21)</span></a></li>
+                            <li><a href="#">Liquids <span>(27)</span></a></li>
+                            <li><a href="#">Spray <span>(33)</span></a></li>
+                            <li><a href="#">Electric <span>(17)</span></a></li>
+                            <li><a href="#">For Cars <span>(23)</span></a></li>
+                            <li><a href="#">For Room <span>(7)</span></a></li>
+                            <li class="last"><a href="#">Other <span>(135)</span></a></li>
                         </ul>
                     </nav>
                     <!-- .left_menu -->
@@ -34,7 +95,7 @@
                         <li>
                             <div class="prev">
                                 <a href="#">
-                                    <img src="images/special1.png" alt="" title="" /></a>
+                                    <img src="../images/special1.png" alt="" title="" /></a>
                             </div>
 
                             <div class="cont">
@@ -46,7 +107,7 @@
                         <li>
                             <div class="prev">
                                 <a href="#">
-                                    <img src="images/special2.png" alt="" title="" /></a>
+                                    <img src="../images/special2.png" alt="" title="" /></a>
                             </div>
 
                             <div class="cont">
@@ -82,7 +143,7 @@
                         <ul id="list_banners">
                             <li class="banner"><a href="#">
                                 <div class="prev">
-                                    <img src="images/banner.png" alt="" title="" />
+                                    <img src="../images/banner.png" alt="" title="" />
                                 </div>
                                 <!-- .prev -->
 
@@ -93,7 +154,7 @@
 
                             <li class="banner"><a href="#">
                                 <div class="prev">
-                                    <img src="images/banner.png" alt="" title="" />
+                                    <img src="../images/banner.png" alt="" title="" />
                                 </div>
                                 <!-- .prev -->
 
@@ -104,7 +165,7 @@
 
                             <li class="banner"><a href="#">
                                 <div class="prev">
-                                    <img src="images/banner.png" alt="" title="" />
+                                    <img src="../images/banner.png" alt="" title="" />
                                 </div>
                                 <!-- .prev -->
 
@@ -152,7 +213,7 @@
                         <div class="preview slides_container">
                             <div class="prev_bg">
                                 <a href="../images/produkt_slid.png" class="jqzoom" rel='gal1' title="">
-                                    <%--<img src="../images/produkt_slid.png" title="" alt="" />--%>
+                                    <img src="../images/produkt_slid.png" title="" alt="" />
                                 </a>
                             </div>
                         </div>
@@ -160,15 +221,15 @@
 
                         <ul class="pagination clearfix" id="thumblist">
                             <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '../images/produkt_slid.png',largeimage: '../images/produkt_slid.png'}">
-                                <img src='../images/produkt_slid.png' alt=""/></a></li>
-                            <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid1.png',largeimage: './images/produkt_slid1.png'}">
-                                <img src='../images/produkt_slid1.png' alt=""/></a></li>
-                            <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid2.png',largeimage: './images/produkt_slid2.png'}">
-                                <img src='../images/produkt_slid2.png' alt=""/></a></li>
-                            <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid3.png',largeimage: './images/produkt_slid3.png'}">
-                                <img src='../images/produkt_slid3.png' alt=""/></a></li>
-                            <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid4.png',largeimage: './images/produkt_slid4.png'}">
-                                <img src='../images/produkt_slid4.png' alt=""/></a></li>
+                                <img src='../images/produkt_slid.png' alt=""></a></li>
+                            <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '../images/produkt_slid1.png',largeimage: '../images/produkt_slid1.png'}">
+                                <img src='../images/produkt_slid1.png' alt=""></a></li>
+                            <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '../images/produkt_slid2.png',largeimage: '../images/produkt_slid2.png'}">
+                                <img src='../images/produkt_slid2.png' alt=""></a></li>
+                            <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '../images/produkt_slid3.png',largeimage: '../images/produkt_slid3.png'}">
+                                <img src='../images/produkt_slid3.png' alt=""></a></li>
+                            <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '../images/produkt_slid4.png',largeimage: '../images/produkt_slid4.png'}">
+                                <img src='../images/produkt_slid4.png' alt=""></a></li>
                         </ul>
 
                         <div class="next_prev">
@@ -225,7 +286,7 @@
                             </div>
                             <!-- .block_cart -->
                             <div class="soc">
-                                <img src="images/soc.png" alt="Soc" />
+                                <img src="../images/soc.png" alt="Soc" />
                             </div>
                             <!-- .soc -->
                         </div>
@@ -449,10 +510,10 @@
                             <ul id="list_product" class="list_product">
                                 <li class="">
                                     <div class="grid_3 product">
-                                        <img class="sale" src="images/sale.png" alt="Sale" />
+                                        <img class="sale" src="../images/sale.png" alt="Sale" />
                                         <div class="prev">
                                             <a href="product_page.html">
-                                                <img src="images/product_1.png" alt="" title="" /></a>
+                                                <img src="../images/product_1.png" alt="" title="" /></a>
                                         </div>
                                         <!-- .prev -->
                                         <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
@@ -476,7 +537,7 @@
                                     <div class="grid_3 product">
                                         <div class="prev">
                                             <a href="product_page.html">
-                                                <img src="images/product_2.png" alt="" title="" /></a>
+                                                <img src="../images/product_2.png" alt="" title="" /></a>
                                         </div>
                                         <!-- .prev -->
                                         <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
@@ -500,7 +561,7 @@
                                     <div class="grid_3 product">
                                         <div class="prev">
                                             <a href="product_page.html">
-                                                <img src="images/product_3.png" alt="" title="" /></a>
+                                                <img src="../images/product_3.png" alt="" title="" /></a>
                                         </div>
                                         <!-- .prev -->
                                         <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
@@ -524,7 +585,7 @@
                                     <div class="grid_3 product">
                                         <div class="prev">
                                             <a href="product_page.html">
-                                                <img src="images/product_4.png" alt="" title="" /></a>
+                                                <img src="../images/product_4.png" alt="" title="" /></a>
                                         </div>
                                         <!-- .prev -->
                                         <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
@@ -561,6 +622,7 @@
         </div>
         <!-- .container_12 -->
     </section>
+    <!-- #main -->
     <!-- #main -->
 
     <div class="clear"></div>
